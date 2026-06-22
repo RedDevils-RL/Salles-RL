@@ -54,8 +54,9 @@
   }
 
   @media (max-width: 900px) {
-    .layout { grid-template-columns: 1fr; }
+    .layout { grid-template-columns: minmax(0, 1fr); }
   }
+  .right-col { min-width: 0; }
 
   /* ===== Calendar widget ===== */
   .cal-card {
@@ -153,6 +154,7 @@
     overflow: hidden;
     margin-bottom: 20px;
     max-width: 100%;
+    min-width: 0;
     position: relative;
   }
 
@@ -318,7 +320,7 @@
 
     main { padding: 14px 14px; }
 
-    .layout { grid-template-columns: 1fr; gap: 16px; }
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 
     .cal-card { padding: 14px; }
     .cal-day { font-size: 12px; }
@@ -370,7 +372,7 @@
     </div>
 
     <!-- Right side -->
-    <div>
+    <div class="right-col">
       <div class="panel-header">
         <div id="selected-date-label">—</div>
         <button class="refresh-btn" onclick="loadAll()">↻ Actualiser</button>
